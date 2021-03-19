@@ -10,14 +10,6 @@ const db = require("../database/db.js")
 // Set up application
 const app = express();
 
-// Parsing json and app/x-www-form-urlencoded from body
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
-
 // Route definition
 router.get("/", (req, res) => {
   res.render("pages/index", {
