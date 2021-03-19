@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const ejsLayout = require("express-ejs-layouts");
 const path = require("path");
-const { PORT } = require("./config")
+const { port } = require("./config")
 
 // Set up application
 const app = express();
@@ -30,8 +30,8 @@ app.set("layout", "./layouts/basic-layout")
 app.use("/routes/index", indexRoute);
 
 // Run App
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 })
 
 app.use("/", indexRoute);

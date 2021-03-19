@@ -2,4 +2,5 @@
 
 ## Changelog:
 - 19/03/21 - Initial Commit
-  - Basic app setup with route
+  - Basic app setup with route added
+  - Basic database scripts added

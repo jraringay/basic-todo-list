@@ -4,6 +4,9 @@
   "description": "A Simple To-Do App",
   "main": "app.js",
   "scripts": {
+    "create-db": "sudo -u postgres psql postgres -h localhost -f sql/create_db.sql",
+    "create-tables": "sudo -u postgres psql postgres -h localhost -d todo -f sql/create_tables.sql",
+    "seed-tables": "sudo -u postgres psql postgres -h localhost -d todo -f sql/seed_tasks.sql",
     "start": "node -r dotenv/cofig app.js",
     "dev": "nodemon -r dotenv/config -e js,ejs,css,html app.js"
   },
@@ -15,7 +18,9 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "pg-promise": "^10.9.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
