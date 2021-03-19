@@ -8,6 +8,11 @@
   <title><%- title %></title>
 </head>
 <body>
-  <%- body %>
+  <%- include("../partials/header.ejs") %>
+  <main>
+    <%- body %>
+  </main>
+  <%- include("../partials/footer.ejs") %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 </body>
 </html>
