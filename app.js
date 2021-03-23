@@ -12,7 +12,6 @@ app.use(morgan("dev"));
 
 // Routes setup
 const indexRoute = require("./routes/index");
-const expressEjsLayouts = require("express-ejs-layouts");
 
 // Parsing json and app/x-www-form-urlencoded from body
 app.use(express.json());

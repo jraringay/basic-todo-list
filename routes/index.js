@@ -34,7 +34,7 @@ router.post("/addtask", (req, res) => {
 })
 
 router.get("/tasks", (req, res) => {
-  db.any("SELECT * FROM todo")
+  db.any("SELECT created_at, task FROM todo")
   .then((tasks) => {
     res.json(tasks)
   })
