@@ -1,0 +1,46 @@
+body {
+  background-color: bisque;
+}
+
+.add-task-div {
+  background-color: antiquewhite;
+}
+
+.task-list-div table {
+  align-content: center;
+  border: 2px double;
+}
+
+
+
+.task-list-div table thead tr th {
+  border-bottom: 2px double;
+  border-right: 2px double;
+  border-left: 2px double;
+  padding: 10px;
+}
+
+
+
+.task-creator {
+  border-left: 2px double;
+  border-top: 2px double;
+  border-bottom: 2px double;
+}
+
+.task-details {
+  border-top: 2px double;
+  border-bottom: 2px double;
+}
+
+.task-status {
+  border-top: 2px double;
+  border-bottom: 2px double;
+}
+
+.task-done-at {
+  border-top: 2px double;
+  border-bottom: 2px double;
+  border-right: 2px double;
+  align-items: center;
+}

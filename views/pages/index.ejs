@@ -1,34 +1,33 @@
 <div class="home">
   <p><%- message %></p>
   
-  <h2>Add New Task</h2>
-  <form action="/addtask" method="post">
-    <table>
-      <tr>
-        <th>Task Name:</th>
-      </tr>
-      <tr class="add-new-task">
-        <td><label for="new-task"><input type="text" id="new-task" name="new-task" required></label></td>
-        <td><input type="submit" class="submit-task" value="Add"></td>
-      </tr>
-    </table>
-  </form>
+  <div class="add-task-div">
+    <h2>Add New Task</h2>
+    <form action="/addtask" method="post">
+      <label for="new-task">Task Name:</label>
+      <input type="text" id="new-task" name="new-task" required>
+      <input type="submit" class="submit-task" value="Add">
+    </form>
+  </div>
 
-  <h2>Task List</h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Created By</th>
-        <th>Created At</th>
-        <th>Task</th>
-        <th>Status</th>
-        <th>Finished At</th>
-      </tr>
-    </thead>
-    <tbody class="tasks">
+  <div class="task-list-div">
+    <h2>Task List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Created By</th>
+          <th>Created At</th>
+          <th>Task</th>
+          <th>Status</th>
+          <th>Finished At</th>
+        </tr>
+      </thead>
+      <tbody class="tasks">
       
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 <script src="/static/scripts/listTodo.js"></script>

@@ -16,7 +16,7 @@ router.get("/login", (req, res) => {
   });
 });
 
-// GET Route definition - Login
+// GET Route definition - Signup
 router.get("/signup", (req, res) => {
   res.render("pages/signup", {
     title: "Signup",

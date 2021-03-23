@@ -27,13 +27,13 @@ $(document).ready(() => {
         }
         $('.tasks').append(`
           <tr class="current">
-            <td>${item.first_name} ${item.last_name}</td>
-            <td>${item.created_at}</td>
-            <td>${item.task}</td>
+            <td class="task-creator">${item.first_name} ${item.last_name}</td>
+            <td class="task-details">${item.created_at}</td>
+            <td class="task-details">${item.task}</td>
             <td class="task-status" id="${item.id}">
               ${status}
             </td>
-            <td>${finish}</td>
+            <td class="task-done-at">${finish}</td>
           </tr>
         `)
       })
