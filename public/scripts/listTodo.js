@@ -14,19 +14,20 @@ $(document).ready(() => {
         if(item.done_at === null) {
           finish = 
             `<form action="/complete/${item.id}" method="post">
-                <input type="submit" name="finish-task" value="Mark Complete" />
-              </form>
-              <form action="/remove/${item.id}" method="post">
-                <input type="submit" name="delete-task" value="Remove Task" />
-              </form>`
+               <input type="submit" name="finish-task" value="Mark Complete" />
+             </form>
+             <form action="/remove/${item.id}" method="post">
+               <input type="submit" name="delete-task" value="Remove Task" />
+             </form>`
         } else {
           finish = item.done_at + 
           `<form action="/remove/${item.id}" method="post">
-            <input type="submit" name="delete-task" value="Remove Task" />
-            </form>`
+             <input type="submit" name="delete-task" value="Remove Task" />
+           </form>`
         }
         $('.tasks').append(`
           <tr class="current">
+            <td>${item.first_name} ${item.last_name}</td>
             <td>${item.created_at}</td>
             <td>${item.task}</td>
             <td class="task-status" id="${item.id}">
@@ -39,7 +40,7 @@ $(document).ready(() => {
     } else {
       $('.tasks').append(`
         <tr class="empty">
-          <td colspan="4">There are no tasks in your To Do list.</td>
+          <td colspan="5">There are no tasks in your To Do list.</td>
         </tr>
       `)
     }
@@ -47,8 +48,8 @@ $(document).ready(() => {
   .catch((err) => {
     $('.tasks').append(`
       <tr class="error">
-        <td colspan="4">Error</td>
-        <td colspan="4">${err.message}</td>
+        <td colspan="5">Error</td>
+        <td colspan="5">${err.message}</td>
       </tr>
     `)
   })

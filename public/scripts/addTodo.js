@@ -5,8 +5,8 @@ $(document).ready(() => {
     };
 
     $.ajax({
-      type: "POST",
       url: "/addtask",
+      type: "POST",
       data: formData,
       dataType: "json",
       encode: true,
