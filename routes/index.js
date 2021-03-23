@@ -53,7 +53,7 @@ router.post("/finish/:id", (req, res) => {
 
 // GET Route definition - Display tasks
 router.get("/tasks", (req, res) => {
-  db.any("SELECT task, TO_CHAR(created_at, 'Day, DDth Mon YYYY') created_at, is_done, TO_CHAR(done_at, 'Day, DDth Mon YYYY') done_at FROM todo")
+  db.any("SELECT id, task, TO_CHAR(created_at, 'Day, DDth Mon YYYY HH12:MM:SS AM') created_at, is_done, TO_CHAR(done_at, 'Day, DDth Mon YYYY HH12:MM:SS AM') done_at FROM todo")
   .then((tasks) => {
     res.json(tasks)
   })

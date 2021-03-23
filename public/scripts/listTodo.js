@@ -4,22 +4,27 @@ const listTodo = () => {
     if(tasks.length > 0) {
       $.each(tasks, (i, item) => {
         let status
+        let finish
         if(!item.is_done) {
           console.log(item.is_done)
           status = "Incomplete"
         } else {
           status = "Complete"
         }
-
+        if(item.done_at === null) {
+          finish = " "
+        } else {
+          finish = item.done_at
+        }
         $('.tasks').append(`
           <tr class="current">
             <td>${item.created_at}</td>
             <td>${item.task}</td>
-            <td id="status">
+            <td class="task-status" id="${item.id}">
               ${status}
               
             </td>
-            <td>${item.done_at}</td>
+            <td>${finish}</td>
           </tr>
         `)
       })
