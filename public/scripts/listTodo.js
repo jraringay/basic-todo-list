@@ -17,9 +17,15 @@ $(document).ready(() => {
             finish = 
               `<form action="/finish/${item.id}" method="post">
                  <input type="submit" name="finish-task" value="Mark Complete" />
+               </form>
+               <form action="/remove/${item.id}" method="post">
+                 <input type="submit" name="delete-task" value="Remove Task" />
                </form>`
           } else {
-            finish = item.done_at
+            finish = item.done_at + 
+            `<form action="/remove/${item.id}" method="post">
+              <input type="submit" name="delete-task" value="Remove Task" />
+             </form>`
           }
           $('.tasks').append(`
             <tr class="current">
