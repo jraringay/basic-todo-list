@@ -41,7 +41,11 @@ router.post("/finish/:id", (req, res) => {
   db.none("UPDATE todo SET is_done = TRUE, done_at = NOW() WHERE id = $1", [taskId])
   .then(() => {
     console.log("Task completed successfully")
-    return res.end()
+    // return res.end()
+    return res.render("pages/index", {
+      title: "Home Page",
+      message: "Hello World",
+    });
   })
   .catch((err) => {
     res.render("pages/error", {
