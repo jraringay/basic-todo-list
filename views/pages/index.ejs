@@ -1,5 +1,18 @@
 <div class="home">
   <p><%- message %></p>
+  
+  <form action="/addtask" method="post">
+    <table>
+      <tr>
+        <th>Add new task:</th>
+      </tr>
+      <tr class="add-new-task">
+        <td><label for="new-task"><input type="text" id="new-task" name="new-task" required></label></td>
+        <td><input type="submit" class="submit-task" value="Add New Task"></td>
+      </tr>
+    </table>
+  </form>
+
   <table>
     <thead>
       <tr>
@@ -16,3 +29,4 @@
 </div>
 
 <script src="/static/scripts/listTodo.js"></script>
+<script src="/static/scripts/addTodo.js"></script>

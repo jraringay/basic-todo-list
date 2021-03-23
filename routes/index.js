@@ -22,7 +22,11 @@ router.post("/addtask", (req, res) => {
   db.none("INSERT INTO todo(task) VALUES ($1)", [req.body.task])
   .then(() => {
     console.log("Task added successfully")
-    return res.end()
+    // return res.end()
+    return res.render("pages/index", {
+      title: "Home Page",
+      message: "Hello World",
+    });
   })
   .catch((err) => {
     res.render("pages/error", {
@@ -34,7 +38,7 @@ router.post("/addtask", (req, res) => {
 
 
 // POST Route definition - Mark finished tasks
-router.post("/finish/:id", (req, res) => {
+router.post("/complete/:id", (req, res) => {
   const taskId = req.params.id
   db.none("UPDATE todo SET is_done = TRUE, done_at = NOW() WHERE id = $1", [taskId])
   .then(() => {
